@@ -1,8 +1,85 @@
 :root{
-    /**/
+    --bg-color: #121212;
+    --surface-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --muted-color: #aaaaaa;
+    --border-color: #444444;
+    --accent-color: #90caf9;
 }
 
 *{
     padding: 0;
     margin: 0;
+}
+
+@font-face {
+  font-family: terminalF4;
+  src: url(../fonts/Terminal\ F4.ttf);
+}
+
+.doto-strong {
+  font-family: "Doto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
+}
+
+.terminal {
+    font-family: terminalF4;
+    color: yellowgreen;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.navbar {
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: var(--text-color);
+}
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:hover {
+    color: var(--accent-color);
+}
+
+.navbar-toggler {
+    border: none;
+    box-shadow: none;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.social-icon {
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.social-icon:hover {
+    color: var(--accent-color) !important;
+}
+
+.hero-yo {
+    background: linear-gradient(135deg, var(--surface-color) 0%, var(--bg-color) 100%);
+}
+
+.blink {
+  animation: blink 0.5s infinite;
+}
+@keyframes blink{
+  to { opacity: .0; }
 }
