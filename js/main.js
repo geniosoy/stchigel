@@ -41,3 +41,12 @@ function deletingEffect() {
 };
 
 typingEffect();
+
+// Mobile navbar toggle
+const navToggler = document.getElementById('navToggler');
+const navbarCollapse = document.getElementById('navbarMain');
+if (navToggler && navbarCollapse) {
+    navToggler.addEventListener('click', () => {
+        navbarCollapse.classList.toggle('open');
+    });
+}
