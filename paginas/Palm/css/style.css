@@ -1,0 +1,176 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: 'PalmOS';
+  src: url('../fonts/palm-os.ttf') format('truetype');
+}
+
+header {
+    border-bottom: 1px solid #070D0D;
+    display: flex;
+}
+
+#links {
+    list-style: none;
+    float: right;
+    display: flex;
+    margin: auto 0 auto auto;
+    padding-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#links li {
+    padding: 5px;
+}
+
+#banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25vh;
+    background-image: url(../img/Screenshot\ 2026-04-06\ at\ 17-30-08\ Palm\ Gone\ But\ Not\ Forgotten\ TechSpot.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#banner h1 {
+    font-family: 'PalmOS', serif;
+    font-size: 50px;
+    color: #fff;
+    text-shadow: 1px 1px 1px#070D0D;
+    text-align: center;
+}
+
+#historia h1 {
+    padding: 20px 20px 0 20px;
+}
+
+#historia h2 {
+    padding: 20px 20px 0 20px;
+}
+
+#historia p {
+    padding: 10px 50px 0 50px;
+}
+
+#historia li {
+    padding: 5px 50px 0 50px;
+}
+
+
+footer p {
+    padding: 20px;
+}
+
+footer {
+    margin-top: 20px;
+    border-top: 1px solid #070D0D;
+    background-color: #F2F0EF;
+}
+
+
+#lista-disp {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.disp {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 15px;
+    text-align: center;
+}
+
+.disp img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.disp h2 {
+    margin: 10px 0 5px;
+}
+
+.disp p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+#catalogo h1, #utiles h1 {
+    padding: 20px 20px 0 20px;
+}
+
+#utiles li {
+    padding: 15px 50px 15px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;  
+    border-bottom: 1px solid #5c5c5c;
+}
+
+#utiles li:last-child {
+    border-bottom: none;
+}
+
+#utiles a{
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#utiles img {
+    width: 80vw;
+    height: auto;
+    border-radius: 8px;
+}
+
+#utiles .sitio-texto {
+    width: 80vw;
+    height: auto;
+}
+
+
+/* tablet */
+@media (min-width: 768px) {
+  #banner {
+    height: 30vh;
+  }
+
+  #utiles li {
+    padding: 5px 50px 0 50px;
+    flex-direction: row;
+    border-bottom: none;
+  }
+
+  #utiles img {
+    width: 40vw;
+  }
+
+  #utiles .sitio-texto {
+    width: 40vw;
+  }
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+  #banner {
+    height: 50vh;
+  }
+}

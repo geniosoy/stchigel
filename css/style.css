@@ -20,14 +20,14 @@
 @font-face {
     font-family: "system-ui-stack";
     src: local("-apple-system"),
-         local("BlinkMacSystemFont"),
-         local("Segoe UI"),
-         local("Roboto"),
-         local("Helvetica Neue"),
-         local("Arial"),
-         local("Noto Sans"),
-         local("Liberation Sans"),
-         local("sans-serif");
+        local("BlinkMacSystemFont"),
+        local("Segoe UI"),
+        local("Roboto"),
+        local("Helvetica Neue"),
+        local("Arial"),
+        local("Noto Sans"),
+        local("Liberation Sans"),
+        local("sans-serif");
 }
 
 .doto-strong {
@@ -41,6 +41,10 @@
 .terminal {
     font-family: terminalF4;
     color: yellowgreen;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -61,6 +65,10 @@ body {
     background-color: var(--surface-color);
     border-bottom: 1px solid var(--border-color);
     height: auto;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar .container {
@@ -142,9 +150,15 @@ body {
     display: none;
 }
 
+.hero {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--surface-color), transparent);
+}
+
 .hero-yo {
     padding: 3rem;
-    background: linear-gradient(135deg, var(--surface-color) 0%, var(--bg-color) 100%);
 }
 
 .hero-title {
@@ -176,22 +190,57 @@ body {
 }
 
 .lista-proyectos li .tarjeta {
-    width: 350px;
+    width: 500px;
     border: 2px solid #000;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 .lista-proyectos li .tarjeta img {
     width: 100%;
     height: auto;
     border-radius: 5px 5px 0 0;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top;
+}
+
+.lista-proyectos li .tarjeta .centrado {
+    object-position: center;
 }
 
 .lista-proyectos li .tarjeta .datos {
-    margin: 5px;
+    flex: 1;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.lista-proyectos li .tarjeta .datos p {
+    margin-bottom: 5px;
+}
+
+.lista-proyectos li .tarjeta>a {
+    display: block;
+    background-color: transparent;
+    border-top: 2px solid rgb(218, 33, 178);
+    color: #fff;
+    border-radius: 0 0 5px 5px;
+    padding: 8px 0;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.lista-proyectos li .tarjeta>a:hover {
+    background-color: rgb(218, 33, 178);
+    color: #fff;
 }
 
 .tecnologias {
+    margin-left: 5%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -203,9 +252,50 @@ body {
 .tecnologias li {
     display: flex;
     align-items: center;
-    background-color: yellowgreen;
-    border-radius: 15px;
-    padding: 5px;
+    background-color: rgb(218, 33, 178);
+    border-radius: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.titulo-sec {
+    font-size: 35px;
+    padding-top: 1vh;
+    padding-left: 5vw;
+}
+
+#web {
+    margin-top: 2%;
+}
+
+.video-fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-element {
+    animation: fade-in linear both;
+    animation-timeline: view();
+    animation-range: entry 25% cover 40%;
 }
 
 @media (max-width: 767px) {
@@ -233,10 +323,51 @@ body {
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 500px) {
     .lista-proyectos li .tarjeta {
         width: 100%;
     }
+}
+
+footer {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    color: var(--muted-color);
+    font-size: 0.9rem;
+}
+
+.lista-contacto {
+    list-style: none;
+    padding: 2rem 5vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 400px;
+}
+
+.lista-contacto li a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.lista-contacto li a i {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+}
+
+.lista-contacto li a:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+    background-color: rgba(144, 202, 249, 0.07);
 }
 
 .blink {

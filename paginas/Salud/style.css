@@ -1,0 +1,459 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.Inline {
+    padding-top: 0.3125rem;
+}
+
+#cabezal {
+    background-color: #ea950c;
+    font-family: 'Forum', cursive;
+    height: 5rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+header {
+    background-color: #ea950c;
+    font-family: 'Forum', cursive;
+    height: 5rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+#banner {
+    width: 100%;
+    height: auto;
+    padding-top: 5rem;
+
+}
+
+#banner-2 {
+    width: 100%;
+    height: auto;
+}
+
+picture {
+    background-color: #a3604d;
+}
+
+.contenedor {
+    background-color: #a3604d;
+}
+
+.center {
+    text-align: center;
+    font-family: 'Questrial', sans-serif;
+    background-color: #a3604d;
+    color: #ffff;
+    padding: 1.25rem;
+}
+
+.center h2 {
+    color: #e99413;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    font-family: 'Forum', cursive;
+}
+
+h1 {
+    color: #e99413;
+    font-family: 'Forum', cursive;
+    text-align: center;
+}
+
+.Nutricion h2 {
+    font-family: 'Forum', cursive;
+    background-color: #eb950c;
+}
+
+.Nutricion p {
+    font-family: 'Questrial', sans-serif;
+}
+
+.Dietas {
+    text-align: center;
+}
+
+.center ul {
+    background-color: #874d66;
+    margin: 0.9375rem;
+    list-style: none;
+}
+
+.center p {
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.d-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icono {
+    color: rgb(0, 0, 0);
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: solid 0.01rem;
+    text-align: center;
+    border-radius: 0.15rem;
+    margin-right: 10%;
+    font-size: 250%;
+    margin-bottom: 5%;
+}
+
+#menu-h {
+    display: none;
+    float: right;
+    background-color: #ea950c;
+    padding: 5%;
+    margin-right: 2%;
+    font-family: 'Forum', cursive;
+}
+
+#menu-h:target {
+    display: block;
+}
+
+#menu-h ul li {
+    margin-bottom: .25rem;
+}
+
+#menu-esc {
+    display: none;
+}
+
+#logo {
+    display: flex;
+}
+
+form {
+    display: flex;
+    flex-flow: column;
+    background-color: white;
+    width: 30%;
+    height: 60%;
+    padding: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.625rem;
+
+}
+
+input,
+textarea {
+    border: none;
+    resize: none;
+    outline: none;
+    padding: 0.9375rem;
+    width: 80%;
+    margin: 1.25rem;
+    transition: all 300ms;
+    border-bottom: 1px solid;
+}
+
+aside {
+    background-color: #0e2338;
+}
+
+.Nutricion p {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.Nutricion img {
+    display: block;
+    margin: auto;
+}
+
+.Nutricion h1 {
+    padding-top: 5%;
+}
+
+.Nutricion h2 {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 1%;
+    margin-top: 5%;
+}
+
+
+
+.galeria {
+    display: block;
+    margin: auto;
+    margin-top: 0;
+}
+
+.galeria li {
+    display: block;
+    margin: auto;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+
+}
+
+.galeria img {
+    display: block;
+    margin: auto;
+
+}
+
+#Galeria {
+    margin: 0;
+}
+
+.galeriasec {
+    background-color: #ea950c;
+}
+
+.galeriasec h1 {
+    color: #000;
+}
+
+.contacto {
+    background-color: #f2c37f;
+
+}
+
+.contacto h2 {
+    text-align: center;
+    font-family: 'Forum', cursive;
+
+}
+
+form {
+    background-color: #dc5b29;
+    margin: auto;
+    width: 70%;
+    margin-top: 5%;
+}
+
+footer {
+    background-color: #f2c37f;
+}
+
+input {
+    border-radius: 0.313rem 0.313rem 0.313rem 0.313rem;
+}
+
+textarea {
+    border-radius: 0.313rem 0.313rem 0.313rem 0.313rem;
+}
+
+#logo-esc {
+    display: none;
+}
+
+iframe {
+    margin: auto;
+    display: block;
+    width: 20rem;
+    height: 15.1875rem;
+}
+
+#logo-2 {
+    padding-top: 0.3125rem;
+}
+footer {
+    margin: auto;
+    text-align: center;
+}
+@media (min-width:768px) {
+    .center h2 {
+
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+
+    iframe {
+        width: 23.375rem;
+        height: 17.75rem;
+    }
+
+    header {
+        width: 100%;
+        height: 4.375rem;
+        background: #32434D;
+        position: absolute;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+    }
+
+
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header nav ul li {
+        text-decoration: none;
+        list-style-type: none;
+        padding: 0rem 1.25rem;
+
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+
+    }
+
+
+    .nav-link {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        margin-right: 2.5rem;
+        list-style: none;
+        align-items: center;
+    }
+
+    .nav-menu-item {
+        font-size: 1.125rem;
+        margin: 0 0.625rem;
+        line-height: 5rem;
+        text-transform: uppercase;
+        width: max-content;
+    }
+
+    .nav-menu-link {
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.1875rem;
+    }
+
+    .nav-menu-link:hover {
+        background-color: rgb(210, 105, 30);
+        transition: 0.5s;
+    }
+
+    .nav-toggle {
+        color: black;
+        border: none;
+        font-size: 1.875rem;
+        padding: 0 1.25rem;
+        line-height: 3.75rem;
+        display: none;
+    }
+
+    #menu-h {
+        display: none;
+    }
+
+    .icono {
+        display: none;
+    }
+
+    #menu-esc {
+        display: inline;
+    }
+
+    #menu-h:target {
+        display: none;
+    }
+
+    .container {
+        width: 720px;
+        margin: auto;
+    }
+
+    .logo {
+        float: left;
+    }
+
+    .d-flex {
+        display: none;
+    }
+
+    #logo-esc {
+        display: block;
+        float: left;
+    }
+
+    .Nutricion li {
+        width: 50%;
+
+    }
+
+
+
+    .Nutricion {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-left: 5%;
+    }
+
+    .galeria {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .DietasUl li {
+        width: 50%;
+    }
+
+    .DietasUl {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+    }
+}
+
+@media (min-width:992px) {
+    .galeria {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .container {
+        width: 960px;
+
+    }
+
+    .center h2 {
+
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+
+    .Nutricion {
+        margin-left: 10%;
+    }
+}
