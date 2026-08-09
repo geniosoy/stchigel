@@ -49,8 +49,9 @@ const sidebar  = document.querySelector('.sidebar');
 const navItems = Array.from(document.querySelectorAll('.nav-item[data-panel]'));
 const panels   = document.querySelectorAll('.panel');
 
-let activePanelId = null;
-let activeIndex   = -1;
+let activePanelId    = null;
+let activeIndex      = -1;
+let programmingScroll = false;
 
 function updateRoller() {
     const sH = sidebar.clientHeight;
@@ -86,6 +87,7 @@ function updateRoller() {
 
     const panelId = closestItem.dataset.panel;
     if (panelId === activePanelId) return;
+    if (programmingScroll) return;
 
     const dir = closestIndex > activeIndex ? 1 : -1;
     showPanel(panelId, dir);
@@ -132,8 +134,10 @@ function initScroll() {
 function scrollToItem(idx) {
     const item = navItems[idx];
     if (!item) return;
+    programmingScroll = true;
     const sH = sidebar.clientHeight;
     sidebar.scrollTo({ top: item.offsetTop + item.offsetHeight / 2 - sH / 2, behavior: 'smooth' });
+    setTimeout(() => { programmingScroll = false; updateRoller(); }, 500);
 }
 
 // Intercept wheel so each tick moves exactly one item
@@ -145,7 +149,7 @@ sidebar.addEventListener('wheel', (e) => {
     const dir = e.deltaY > 0 ? 1 : -1;
     const current = activeIndex < 0 ? 0 : activeIndex;
     scrollToItem(Math.max(0, Math.min(navItems.length - 1, current + dir)));
-    setTimeout(() => { wheelLocked = false; }, 420);
+    setTimeout(() => { wheelLocked = false; }, 500);
 }, { passive: false });
 
 sidebar.addEventListener('scroll', () => {
@@ -162,6 +166,10 @@ let touchLocked = false;
 sidebar.addEventListener('touchstart', (e) => {
     touchStartY = e.touches[0].clientY;
 }, { passive: true });
+// Prevent native scroll so snap doesn't fight the swipe handler
+sidebar.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+}, { passive: false });
 sidebar.addEventListener('touchend', (e) => {
     if (touchLocked) return;
     const dy = touchStartY - e.changedTouches[0].clientY;
@@ -170,7 +178,7 @@ sidebar.addEventListener('touchend', (e) => {
     const dir = dy > 0 ? 1 : -1;
     const current = activeIndex < 0 ? 0 : activeIndex;
     scrollToItem(Math.max(0, Math.min(navItems.length - 1, current + dir)));
-    setTimeout(() => { touchLocked = false; }, 420);
+    setTimeout(() => { touchLocked = false; }, 500);
 }, { passive: true });
 
 window.addEventListener('load', initScroll);
