@@ -156,4 +156,21 @@ navItems.forEach(item => {
     item.addEventListener('click', () => scrollToItem(navItems.indexOf(item)));
 });
 
+// Touch swipe — one swipe moves one item (mirrors wheel behaviour)
+let touchStartY = 0;
+let touchLocked = false;
+sidebar.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+}, { passive: true });
+sidebar.addEventListener('touchend', (e) => {
+    if (touchLocked) return;
+    const dy = touchStartY - e.changedTouches[0].clientY;
+    if (Math.abs(dy) < 20) return; // ignore taps
+    touchLocked = true;
+    const dir = dy > 0 ? 1 : -1;
+    const current = activeIndex < 0 ? 0 : activeIndex;
+    scrollToItem(Math.max(0, Math.min(navItems.length - 1, current + dir)));
+    setTimeout(() => { touchLocked = false; }, 420);
+}, { passive: true });
+
 window.addEventListener('load', initScroll);

@@ -288,3 +288,81 @@ body {
     color: var(--accent);
     background: rgba(144, 202, 249, 0.06);
 }
+
+/* ════════════════════════════════
+   MOBILE — stacked layout
+   ════════════════════════════════ */
+@media (max-width: 768px) {
+    html, body {
+        overflow: hidden;
+    }
+
+    .layout {
+        flex-direction: column;
+    }
+
+    /* Top: nav roller */
+    .sidebar {
+        width: 100%;
+        height: 42vh;
+        /* re-center mask for shorter vertical space */
+        mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 18%,
+            black 82%,
+            transparent 100%
+        );
+        -webkit-mask-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 18%,
+            black 82%,
+            transparent 100%
+        );
+    }
+
+    .nav-list {
+        /* padding ≈ half of 42vh so first/last items can reach center */
+        padding-block: 19vh;
+    }
+
+    /* Horizontal divider */
+    .divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    /* Bottom: content panels */
+    .content {
+        flex: 1;
+        height: auto;
+    }
+
+    .panel {
+        padding: 2rem 1.75rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    /* Stack image above text in project panels */
+    .project-content {
+        flex-direction: column;
+        gap: 1.25rem;
+        overflow-y: auto;
+    }
+
+    .project-img {
+        width: 100%;
+    }
+
+    .lista-contacto {
+        max-width: 100%;
+    }
+}
