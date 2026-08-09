@@ -1,15 +1,16 @@
 :root {
-    --bg-color: #121212;
-    --surface-color: #1e1e1e;
-    --text-color: #e0e0e0;
-    --muted-color: #aaaaaa;
-    --border-color: #444444;
-    --accent-color: #90caf9;
+    --bg: #0f0f0f;
+    --surface: #141414;
+    --text: #ebebeb;
+    --muted: #444;
+    --border: #1e1e1e;
+    --accent: #90caf9;
 }
 
-* {
-    padding: 0;
+*, *::before, *::after {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 @font-face {
@@ -17,357 +18,22 @@
     src: url(../fonts/Terminal\ F4.ttf);
 }
 
-@font-face {
-    font-family: "system-ui-stack";
-    src: local("-apple-system"),
-        local("BlinkMacSystemFont"),
-        local("Segoe UI"),
-        local("Roboto"),
-        local("Helvetica Neue"),
-        local("Arial"),
-        local("Noto Sans"),
-        local("Liberation Sans"),
-        local("sans-serif");
-}
-
-.doto-strong {
-    font-family: "Doto", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-variation-settings:
-        "ROND"0;
-}
-
-.terminal {
-    font-family: terminalF4;
-    color: yellowgreen;
-}
-
-html {
-    scroll-behavior: smooth;
+html, body {
+    height: 100%;
+    overflow: hidden;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: "system-ui-stack", sans-serif;
-    font-size: 1rem;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
     line-height: 1.5;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
-    padding: 0;
-}
-
-.navbar {
-    background-color: var(--surface-color);
-    border-bottom: 1px solid var(--border-color);
-    height: auto;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-}
-
-.navbar .container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-}
-
-.navbar-brand {
-    font-size: 1.25rem;
-    text-decoration: none;
-    color: var(--text-color);
-    margin-right: 1rem;
-}
-
-.navbar-brand:hover {
-    color: var(--accent-color);
-}
-
-.navbar-collapse {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-}
-
-.navbar-nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    list-style: none;
-    margin: 0 0 0 auto;
-    padding: 0;
-    gap: 1rem;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-}
-
-.nav-item {
-    display: flex;
-    align-items: center;
-}
-
-.nav-link {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 0.25rem 0.5rem;
-    transition: color 0.2s;
-}
-
-.nav-link:hover {
-    color: var(--accent-color);
-}
-
-.navbar-toggler {
-    display: none;
-    background: none;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    padding: 0.4rem 0.6rem;
-    cursor: pointer;
-    margin-left: auto;
-}
-
-.navbar-toggler-icon {
-    display: block;
-    width: 1.5em;
-    height: 1.5em;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(224,224,224,0.85)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-}
-
-.social-links {
-    display: none;
-}
-
-.hero {
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, var(--surface-color), transparent);
-}
-
-.hero-yo {
-    padding: 3rem;
-}
-
-.hero-title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--muted-color);
-    margin-bottom: 1rem;
-}
-
-.lista-proyectos {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
-    margin: 25px;
-}
-
-.lista-proyectos li {
-    display: flex;
-    align-items: center;
-}
-
-.lista-proyectos li .tarjeta {
-    width: 500px;
-    border: 2px solid #000;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-}
-
-.lista-proyectos li .tarjeta img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px 5px 0 0;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    object-position: top;
-}
-
-.lista-proyectos li .tarjeta .centrado {
-    object-position: center;
-}
-
-.lista-proyectos li .tarjeta .datos {
-    flex: 1;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.lista-proyectos li .tarjeta .datos p {
-    margin-bottom: 5px;
-}
-
-.lista-proyectos li .tarjeta>a {
-    display: block;
-    background-color: transparent;
-    border-top: 2px solid rgb(218, 33, 178);
-    color: #fff;
-    border-radius: 0 0 5px 5px;
-    padding: 8px 0;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.2s;
-}
-
-.lista-proyectos li .tarjeta>a:hover {
-    background-color: rgb(218, 33, 178);
-    color: #fff;
-}
-
-.tecnologias {
-    margin-left: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 5px;
-    list-style: none;
-    padding: 0;
-}
-
-.tecnologias li {
-    display: flex;
-    align-items: center;
-    background-color: rgb(218, 33, 178);
-    border-radius: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.titulo-sec {
-    font-size: 35px;
-    padding-top: 1vh;
-    padding-left: 5vw;
-}
-
-#web {
-    margin-top: 2%;
-}
-
-.video-fondo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.reveal-element {
-    animation: fade-in linear both;
-    animation-timeline: view();
-    animation-range: entry 25% cover 40%;
-}
-
-@media (max-width: 767px) {
-    .navbar-toggler {
-        display: block;
-    }
-
-    .navbar-collapse {
-        display: none;
-        flex-basis: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0.5rem 0;
-    }
-
-    .navbar-collapse.open {
-        display: flex;
-    }
-
-    .navbar-nav {
-        flex-direction: column;
-        width: 100%;
-        gap: 0.25rem;
-        margin: 0;
-    }
-}
-
-@media (max-width: 500px) {
-    .lista-proyectos li .tarjeta {
-        width: 100%;
-    }
-}
-
-footer {
-    margin-top: 3rem;
-    padding: 1.5rem;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-    color: var(--muted-color);
-    font-size: 0.9rem;
-}
-
-.lista-contacto {
-    list-style: none;
-    padding: 2rem 5vw;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    max-width: 400px;
-}
-
-.lista-contacto li a {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1.25rem;
-    background-color: var(--surface-color);
-    border-radius: 8px;
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-.lista-contacto li a i {
-    font-size: 1.25rem;
-    color: var(--accent-color);
-}
-
-.lista-contacto li a:hover {
-    border-color: var(--accent-color);
-    color: var(--accent-color);
-    background-color: rgba(144, 202, 249, 0.07);
+/* ── Typing cursor ── */
+.terminal {
+    font-family: terminalF4;
+    color: yellowgreen;
 }
 
 .blink {
@@ -375,27 +41,250 @@ footer {
 }
 
 @keyframes blink {
-    to {
-        opacity: .0;
-    }
+    to { opacity: 0; }
 }
 
-
-/*
-.nose {
+/* ── Root layout ── */
+.layout {
     display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ════════════════════════════════
+   LEFT — scroll-snap roller
+   ════════════════════════════════ */
+.sidebar {
+    width: 42%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+    /* fade items out toward the top and bottom edges */
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 22%,
+        black 78%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        black 22%,
+        black 78%,
+        transparent 100%
+    );
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-list {
+    list-style: none;
+    /* top/bottom padding so first and last items can scroll to center */
+    padding-block: 43vh;
+    padding-inline: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-item {
+    scroll-snap-align: center;
+    width: 100%;
+    padding: 1.1rem 0;
+    cursor: pointer;
+    text-align: center;
+    /* JS drives opacity/transform live; will-change avoids repaint */
+    will-change: opacity, transform;
+    /* short transition smooths the snap "landing" */
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Title item ─ big typing animation */
+.nav-title {
+    padding: 2rem 0;
+}
+
+.hero-title {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+/* Section headers */
+.nav-section {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+}
+
+/* Project items */
+.nav-project {
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+/* ── Divider ── */
+.divider {
+    width: 1px;
+    height: 100vh;
+    flex-shrink: 0;
+    background: var(--border);
+}
+
+/* ════════════════════════════════
+   RIGHT — content panels
+   ════════════════════════════════ */
+.content {
+    flex: 1;
+    height: 100vh;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.panel {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.5rem 4rem;
+    opacity: 0;
+    pointer-events: none;
+    /* WAAPI drives all enter/exit animations */
+}
+
+.panel.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* ── Intro panel ── */
+.hero-subtitle {
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: #888;
+    line-height: 1.55;
+}
+
+/* ── Section panels (tech blobs) ── */
+.panel-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
-    margin-left: 1rem;
+    list-style: none;
 }
 
-.social-icon {
-    font-size: 1.2rem;
+.tecnologias li {
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    background: rgba(144, 202, 249, 0.07);
+    border: 1px solid rgba(144, 202, 249, 0.22);
+    color: var(--accent);
+}
+
+/* ── Project panels ── */
+.project-content {
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+.project-img {
+    width: 52%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+}
+
+.project-img.centrado {
+    object-position: center;
+}
+
+.project-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.project-info h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.project-info p {
+    font-size: 0.95rem;
+    color: #888;
+    line-height: 1.65;
+}
+
+.btn-ver {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--accent);
     text-decoration: none;
-    color: var(--text-color);
-    transition: color 0.2s;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border: 1px solid rgba(144, 202, 249, 0.28);
+    border-radius: 6px;
+    padding: 0.45rem 1rem;
+    width: fit-content;
+    transition: background 0.2s, border-color 0.2s;
 }
 
-.social-icon:hover {
-    color: var(--accent-color);
+.btn-ver:hover {
+    background: rgba(144, 202, 249, 0.09);
+    border-color: var(--accent);
 }
-*/
+
+/* ── Contact panel ── */
+.lista-contacto {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 360px;
+}
+
+.lista-contacto li a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.lista-contacto li a i {
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+.lista-contacto li a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(144, 202, 249, 0.06);
+}
