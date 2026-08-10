@@ -49,6 +49,15 @@ const sidebar  = document.querySelector('.sidebar');
 const navItems = Array.from(document.querySelectorAll('.nav-item[data-panel]'));
 const panels   = document.querySelectorAll('.panel');
 
+// -- Scroll hint dismiss — attached after init so initScroll's scroll doesn't trigger it
+const scrollHint = document.getElementById('scrollHint');
+function attachHintDismiss() {
+    sidebar.addEventListener('scroll', function hideHint() {
+        scrollHint.classList.add('hidden');
+        sidebar.removeEventListener('scroll', hideHint);
+    }, { passive: true });
+}
+
 let activePanelId    = null;
 let activeIndex      = -1;
 let programmingScroll = false;
@@ -181,4 +190,4 @@ sidebar.addEventListener('touchend', (e) => {
     setTimeout(() => { touchLocked = false; }, 500);
 }, { passive: true });
 
-window.addEventListener('load', initScroll);
+window.addEventListener('load', () => { initScroll(); setTimeout(attachHintDismiss, 600); });
