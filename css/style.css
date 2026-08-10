@@ -105,7 +105,7 @@ body {
 .nav-list {
     list-style: none;
     /* top/bottom padding so first and last items can scroll to center */
-    padding-block: 43vh;
+    padding-block: 50vh;
     padding-inline: 2rem;
     display: flex;
     flex-direction: column;
@@ -325,7 +325,7 @@ body {
     /* Top: nav roller */
     .sidebar {
         width: 100%;
-        height: 42vh;
+        height: 28vh;
         /* re-center mask for shorter vertical space */
         mask-image: linear-gradient(
             to bottom,
@@ -344,8 +344,8 @@ body {
     }
 
     .nav-list {
-        /* padding ≈ half of 42vh so first/last items can reach center */
-        padding-block: 19vh;
+        /* padding ≈ half of 28vh so first/last items can reach center */
+        padding-block: 13vh;
     }
 
     /* Horizontal divider */
