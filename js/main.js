@@ -149,9 +149,9 @@ function scrollToItem(idx) {
     setTimeout(() => { programmingScroll = false; updateRoller(); }, 500);
 }
 
-// Intercept wheel so each tick moves exactly one item
+// Intercept wheel anywhere on the page so each tick moves exactly one item
 let wheelLocked = false;
-sidebar.addEventListener('wheel', (e) => {
+window.addEventListener('wheel', (e) => {
     e.preventDefault();
     if (wheelLocked) return;
     wheelLocked = true;
@@ -169,17 +169,17 @@ navItems.forEach(item => {
     item.addEventListener('click', () => scrollToItem(navItems.indexOf(item)));
 });
 
-// Touch swipe — one swipe moves one item (mirrors wheel behaviour)
+// Touch swipe anywhere on the page — one swipe moves one item (mirrors wheel behaviour)
 let touchStartY = 0;
 let touchLocked = false;
-sidebar.addEventListener('touchstart', (e) => {
+window.addEventListener('touchstart', (e) => {
     touchStartY = e.touches[0].clientY;
 }, { passive: true });
 // Prevent native scroll so snap doesn't fight the swipe handler
-sidebar.addEventListener('touchmove', (e) => {
+window.addEventListener('touchmove', (e) => {
     e.preventDefault();
 }, { passive: false });
-sidebar.addEventListener('touchend', (e) => {
+window.addEventListener('touchend', (e) => {
     if (touchLocked) return;
     const dy = touchStartY - e.changedTouches[0].clientY;
     if (Math.abs(dy) < 20) return; // ignore taps
@@ -188,6 +188,6 @@ sidebar.addEventListener('touchend', (e) => {
     const current = activeIndex < 0 ? 0 : activeIndex;
     scrollToItem(Math.max(0, Math.min(navItems.length - 1, current + dir)));
     setTimeout(() => { touchLocked = false; }, 500);
-}, { passive: true });
+}, { passive: false });
 
 window.addEventListener('load', () => { initScroll(); setTimeout(attachHintDismiss, 600); });
