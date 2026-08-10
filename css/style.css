@@ -218,6 +218,52 @@ body {
     color: var(--accent);
 }
 
+/* ── About panels ── */
+.about-entry + .about-entry {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.about-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    max-width: 560px;
+}
+
+.about-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.about-date {
+    font-size: 0.82rem;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.about-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.65rem;
+    border-radius: 20px;
+    background: rgba(144, 202, 249, 0.07);
+    border: 1px solid rgba(144, 202, 249, 0.22);
+    color: var(--accent);
+}
+
+.about-entry h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+.about-entry p {
+    color: rgba(235, 235, 235, 0.7);
+    line-height: 1.6;
+    font-size: 0.92rem;
+}
+
 /* ── Project panels ── */
 .project-content {
     display: flex;
