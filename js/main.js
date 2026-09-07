@@ -3,7 +3,8 @@
 // Retrieved 2026-04-21, License - CC BY-SA 4.0
 // "Diseñador"
 
-const words = ["Stchigel", "Programador", "Desarrollador", "Tecnico", "Administrador"];
+// window.TYPING_WORDS lets translated pages (e.g. en/index.html) supply their own word list
+const words = window.TYPING_WORDS || ["Stchigel", "Programador", "Desarrollador", "Tecnico", "Administrador"];
 let i = 0;
 let timer;
 
@@ -106,6 +107,7 @@ function updateRoller() {
 }
 
 function showPanel(panelId, dir) {
+    closeAllTooltips();
     const easing = 'cubic-bezier(0.4, 0, 0.2, 1)';
     const outY = dir === 1 ? '-28px' : '28px';
     const inY  = dir === 1 ? '28px'  : '-28px';
@@ -191,3 +193,62 @@ window.addEventListener('touchend', (e) => {
 }, { passive: false });
 
 window.addEventListener('load', () => { initScroll(); setTimeout(attachHintDismiss, 600); });
+
+// -- Curiosidades tooltips — moved to <body> with fixed positioning so overflow/stacking
+// on ancestors (e.g. the sidebar) never clips or covers them --
+const tooltipTerms = Array.from(document.querySelectorAll('.tooltip-term'));
+const tooltipPairs = tooltipTerms.map(term => {
+    const popup = term.querySelector('.tooltip-popup');
+    if (popup) document.body.appendChild(popup);
+    return { term, popup };
+});
+
+function positionTooltip(term, popup) {
+    const rect = term.getBoundingClientRect();
+    const halfWidth = popup.offsetWidth / 2;
+    const margin = 8;
+    const x = Math.min(
+        Math.max(rect.left + rect.width / 2, halfWidth + margin),
+        window.innerWidth - halfWidth - margin
+    );
+    popup.style.left = `${x}px`;
+    popup.style.top = `${rect.top - 14}px`;
+}
+
+function closeAllTooltips() {
+    tooltipPairs.forEach(({ term, popup }) => {
+        term.classList.remove('tooltip-open');
+        popup.classList.remove('tooltip-visible');
+    });
+}
+
+tooltipPairs.forEach(({ term, popup }) => {
+    if (!popup) return;
+
+    const open = () => {
+        positionTooltip(term, popup);
+        popup.classList.add('tooltip-visible');
+    };
+    const close = () => popup.classList.remove('tooltip-visible');
+
+    term.addEventListener('mouseenter', open);
+    term.addEventListener('mouseleave', () => { if (!term.classList.contains('tooltip-open')) close(); });
+    term.addEventListener('focus', open);
+    term.addEventListener('blur', () => { if (!term.classList.contains('tooltip-open')) close(); });
+
+    // Tap-to-toggle so it also works without hover (touch/mobile)
+    term.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const wasOpen = term.classList.contains('tooltip-open');
+        closeAllTooltips();
+        if (!wasOpen) {
+            term.classList.add('tooltip-open');
+            open();
+        }
+    });
+});
+
+document.addEventListener('click', closeAllTooltips);
+window.addEventListener('resize', closeAllTooltips);
+
+

@@ -72,6 +72,29 @@ body {
     overflow: hidden;
 }
 
+/* ── Language switcher ── */
+.lang-switch {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.5rem;
+    z-index: 30;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 0.35rem 0.75rem;
+    border: 1px solid rgba(144, 202, 249, 0.28);
+    border-radius: 6px;
+    background: rgba(144, 202, 249, 0.05);
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.lang-switch:hover {
+    background: rgba(144, 202, 249, 0.12);
+    border-color: var(--accent);
+}
+
 /* ════════════════════════════════
    LEFT — scroll-snap roller
    ════════════════════════════════ */
@@ -282,6 +305,75 @@ body {
     font-size: 0.92rem;
 }
 
+/* ── Curiosidades panel (hover tooltips) ── */
+.tooltip-text {
+    max-width: 560px;
+    color: rgba(235, 235, 235, 0.85);
+    line-height: 1.75;
+}
+
+.tooltip-term {
+    position: relative;
+    color: var(--accent);
+    font-weight: 500;
+    cursor: help;
+    border-bottom: 1px dashed var(--accent);
+}
+
+.tooltip-popup {
+    /* positioned via JS (left/top in px) and appended to <body>, so it always
+       renders above the sidebar instead of being clipped/covered by it */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 260px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.9rem;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-50%, calc(-100% + 6px));
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 500;
+}
+
+.tooltip-popup::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--surface);
+}
+
+.tooltip-popup img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 0.6rem;
+}
+
+.tooltip-popup .tooltip-caption {
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: rgba(235, 235, 235, 0.75);
+    line-height: 1.5;
+}
+
+.tooltip-popup.tooltip-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -100%);
+    pointer-events: auto;
+}
+
 /* ── Project panels ── */
 .project-content {
     display: flex;
@@ -412,6 +504,13 @@ body {
         padding-block: 13vh;
     }
 
+    .lang-switch {
+        top: 0.6rem;
+        right: 0.75rem;
+        font-size: 0.7rem;
+        padding: 0.25rem 0.6rem;
+    }
+
     /* Horizontal divider */
     .divider {
         width: 100%;
@@ -449,6 +548,12 @@ body {
 
     .lista-contacto {
         max-width: 100%;
+    }
+
+    /* Tooltip popups: keep them on-screen and readable on narrow viewports */
+    .tooltip-popup {
+        width: 78vw;
+        max-width: 300px;
     }
 
     .scroll-hint {

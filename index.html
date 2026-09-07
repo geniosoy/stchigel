@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,11 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 	<link rel="icon" type="image/svg+xml" href="favicon.svg">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="alternate" hreflang="es" href="/">
+	<link rel="alternate" hreflang="en" href="/en/">
 </head>
 <body>
+	<a class="lang-switch" href="/en/" lang="en" hreflang="en">EN</a>
 	<div class="layout">
 
 		<!-- LEFT: scroll-snap roller -->
@@ -21,6 +24,7 @@
 					<h1 class="hero-title">Hola, soy<br><span class="terminal" id="word"></span><span class="terminal blink">_</span></h1>
 				</li>
 				<li class="nav-item nav-section" data-panel="panel-about">About</li>
+				<li class="nav-item nav-project" data-panel="panel-curiosidades">Curiosidades</li>
 				<li class="nav-item nav-project" data-panel="panel-experiencia">Experiencia</li>
 				<li class="nav-item nav-project" data-panel="panel-educacion">Educación</li>
 				<li class="nav-item nav-section" data-panel="panel-web">Proyectos web</li>
@@ -53,6 +57,11 @@
 			<div class="panel" id="panel-about">
 				<h2 class="panel-title">About</h2>
 				<p>Desarrollador web y entusiasta del gamedev. Me apasiona construir experiencias digitales limpias y funcionales, desde sitios estáticos hasta aplicaciones con backend.</p>
+			</div>
+
+			<div class="panel" id="panel-curiosidades">
+				<h2 class="panel-title">Curiosidades</h2>
+				<p class="tooltip-text">Me llamo Nicolás, soy de Buenos Aires, Argentina y programo desde los 12 años. Estos primeros proyectos podrían no ser muy avanzados pero me guiaron a decidir lo que quiero hacer a futuro. Lo que más me interesa dentro del mundo de la tecnología es la ciberseguridad y los servidores. Además de esto me apasiona la <span class="tooltip-term" tabindex="0">tecnología retro<span class="tooltip-popup"><span class="tooltip-caption">Todo desde diskettes hasta laptops.</span></span></span> y el <span class="tooltip-term" tabindex="0">coleccionismo<span class="tooltip-popup"><span class="tooltip-caption">Tarjetas (plásticas, de transporte, llaves de hotel, etc), celulares, memorabilia de aerolíneas, memorabilia de hoteles y mini perfumes.</span></span></span>. Fun fact: solía tocar el violín en primaria, aunque no se me daba muy bien.</p>
 			</div>
 
 			<div class="panel" id="panel-experiencia">
@@ -170,7 +179,7 @@
 					<div class="project-info">
 						<h3>WaterMazeIng</h3>
 						<p>Juego de laberinto acuático desarrollado en Godot, con mecánicas de agua fluidas y un sistema de niveles adictivo</p>
-						<a href="https://github.com/stchigel/WaterMazeIng" class="btn-ver" target="_blank" rel="noopener noreferrer">Ver proyecto <i class="bi bi-arrow-right"></i></a>
+						<a href="https://videojuegosipm2026.itch.io/water-maze-ing" class="btn-ver" target="_blank" rel="noopener noreferrer">Ver proyecto <i class="bi bi-arrow-right"></i></a>
 					</div>
 				</div>
 			</div>
@@ -203,7 +212,7 @@
 					<li><a href="https://github.com/geniosoy" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub personal</a></li>
 					<li><a href="https://www.linkedin.com/in/stchigel" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> Mi LinkedIn</a></li>
 					<li><a href="mailto:nicolas@stchigel.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-envelope"></i> Mi correo</a></li>
-					<li><a href="img/CV-Nicolas-Stchigel.pdf" target="_blank"><i class="bi bi-file-earmark-person"></i> Mi CV</a></li>
+					<li><a href="img/CV-Nicolas-Stchigel-English.pdf" target="_blank"><i class="bi bi-file-earmark-person"></i> Mi CV</a></li>
 				</ul>
 			</div>
 

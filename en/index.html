@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Stchigel - Developer</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+	<link rel="stylesheet" href="../css/style.css">
+	<link rel="alternate" hreflang="en" href="/en/">
+	<link rel="alternate" hreflang="es" href="/">
+</head>
+<body>
+	<a class="lang-switch" href="/" lang="es" hreflang="es">ES</a>
+	<div class="layout">
+
+		<!-- LEFT: scroll-snap roller -->
+		<nav class="sidebar">
+			<ul class="nav-list">
+				<li class="nav-item nav-title" data-panel="panel-intro">
+					<h1 class="hero-title">Hi, I'm<br><span class="terminal" id="word"></span><span class="terminal blink">_</span></h1>
+				</li>
+				<li class="nav-item nav-section" data-panel="panel-about">About</li>
+				<li class="nav-item nav-project" data-panel="panel-curiosidades">Fun Facts</li>
+				<li class="nav-item nav-project" data-panel="panel-experiencia">Experience</li>
+				<li class="nav-item nav-project" data-panel="panel-educacion">Education</li>
+				<li class="nav-item nav-section" data-panel="panel-web">Web projects</li>
+				<li class="nav-item nav-project" data-panel="panel-sensorium">Espacio Sensorium</li>
+				<li class="nav-item nav-project" data-panel="panel-dynamicenergy">Dynamic Energy</li>
+				<li class="nav-item nav-project" data-panel="panel-vueltaalcole">Vuelta Al Cole</li>
+				<li class="nav-item nav-project" data-panel="panel-corteiz">Corteiz</li>
+				<li class="nav-item nav-section" data-panel="panel-gamedev">Gamedev projects</li>
+				<li class="nav-item nav-project" data-panel="panel-pong">POnG</li>
+				<li class="nav-item nav-project" data-panel="panel-watermazing">WaterMazeIng</li>
+				<li class="nav-item nav-project" data-panel="panel-ko">K.O. Kriminal Objective</li>
+				<li class="nav-item nav-project" data-panel="panel-estelar">Estelar</li>
+				<li class="nav-item nav-section" data-panel="panel-contacto">Contact</li>
+			</ul>
+		</nav>
+
+		<div class="scroll-hint" id="scrollHint">
+			<i class="bi bi-chevron-double-down"></i>
+		</div>
+
+		<div class="divider"></div>
+
+		<!-- RIGHT: content panels -->
+		<main class="content">
+
+			<div class="panel" id="panel-intro">
+				<p class="hero-subtitle">Future Computer Technician<br>@ Instituto Politécnico Modelo</p>
+			</div>
+
+			<div class="panel" id="panel-about">
+				<h2 class="panel-title">About</h2>
+				<p>Web developer and gamedev enthusiast. I'm passionate about building clean, functional digital experiences, from static sites to backend applications.</p>
+			</div>
+
+			<div class="panel" id="panel-curiosidades">
+				<h2 class="panel-title">Fun Facts</h2>
+				<p class="tooltip-text">My name is Nicolás, I'm from Buenos Aires, Argentina, and I've been programming since I was 12. My first projects weren't very advanced, but they guided me toward what I want to do in the future. What interests me most in the world of technology is cybersecurity and servers. Besides that, I'm passionate about <span class="tooltip-term" tabindex="0">retro technology<span class="tooltip-popup"><span class="tooltip-caption">Everything from floppy disks to laptops.</span></span></span> and <span class="tooltip-term" tabindex="0">collecting<span class="tooltip-popup"><span class="tooltip-caption">Cards (plastic, transit, hotel keys, etc), phones, airline memorabilia, hotel memorabilia, and mini perfumes.</span></span></span>. Fun fact: I used to play the violin in elementary school, though I wasn't very good at it.</p>
+			</div>
+
+			<div class="panel" id="panel-experiencia">
+				<div class="about-entry">
+					<div class="about-meta">
+						<span class="about-date">Jul 2026 — Present</span>
+						<span class="about-tag">Freelance</span>
+					</div>
+					<h3>Web Developer</h3>
+					<p>AI-assisted website development, hosting setup, and domain configuration. Use and configuration of Cloudflare, Netlify, Google App Scripts. Fixing and improving websites.</p>
+				</div>
+				<div class="about-entry">
+					<div class="about-meta">
+						<span class="about-date">Mar 2026 — Present</span>
+						<span class="about-tag">Dynamic Energy</span>
+					</div>
+					<h3>Professional Internship</h3>
+					<p>Development of websites for Dynamic Energy and its different areas, implementing forms, reviews, and various utilities.</p>
+				</div>
+			</div>
+
+			<div class="panel" id="panel-educacion">
+				<div class="about-entry">
+					<div class="about-meta">
+						<span class="about-date">2022 — 2026</span>
+						<span class="about-tag">Ongoing</span>
+					</div>
+					<h3>Computer Technician</h3>
+					<p>Instituto Politécnico Modelo. Technical training in programming, networking, databases and software development.</p>
+				</div>
+			</div>
+
+			<div class="panel" id="panel-web">
+				<h2 class="panel-title">My web projects</h2>
+				<ul class="tecnologias">
+					<li>HTML</li>
+					<li>CSS</li>
+					<li>JavaScript</li>
+					<li>TypeScript</li>
+					<li>Springboot</li>
+					<li>MongoDB</li>
+					<li>MySQL</li>
+				</ul>
+			</div>
+
+			<div class="panel" id="panel-sensorium">
+				<div class="project-content">
+					<img src="../img/sitios/sensorium.png" alt="Espacio Sensorium" class="project-img">
+					<div class="project-info">
+						<h3>Espacio Sensorium</h3>
+						<p>Fixing, maintenance and relaunch of the Espacio Sensorium website, an event venue.</p>
+						<a href="https://www.espaciosensorium.com.ar" class="btn-ver" target="_blank" rel="noopener noreferrer">View project <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel" id="panel-dynamicenergy">
+				<div class="project-content">
+					<img src="../img/sitios/dynamicenergy.png" alt="Dynamic Energy" class="project-img">
+					<div class="project-info">
+						<h3>Dynamic Energy</h3>
+						<p>Fixing and maintenance of the Dynamic Energy website, a renewable energy company.</p>
+						<a href="https://www.dynamicenergy.com.ar" class="btn-ver" target="_blank" rel="noopener noreferrer">View project <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel" id="panel-vueltaalcole">
+				<div class="project-content">
+					<img src="../img/sitios/vueltaalcole.png" alt="Vuelta Al Cole" class="project-img">
+					<div class="project-info">
+						<h3>Vuelta Al Cole</h3>
+						<p>Buy-and-sell website for school supplies. Designed and coded as a group. Front and back.</p>
+						<a href="https://strange-day-622886.framer.app/" class="btn-ver" target="_blank" rel="noopener noreferrer">View project <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel" id="panel-corteiz">
+				<div class="project-content">
+					<img src="../img/sitios/corteiz.png" alt="Corteiz" class="project-img">
+					<div class="project-info">
+						<h3>Corteiz</h3>
+						<p>Fictional rebranding of a streetwear clothing website. Designed as a group in Figma.</p>
+						<a href="https://www.figma.com/proto/U4llT3gZEahCtitH70it8K/CORTEIZ" class="btn-ver" target="_blank" rel="noopener noreferrer">View project <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel" id="panel-gamedev">
+				<h2 class="panel-title">My gamedev projects</h2>
+				<ul class="tecnologias">
+					<li>Godot</li>
+					<li>Unity</li>
+					<li>Roblox</li>
+					<li>C++</li>
+					<li>C#</li>
+				</ul>
+			</div>
+
+			<div class="panel" id="panel-pong">
+				<div class="project-content">
+					<img src="../img/juegos/pong.png" alt="POnG" class="project-img">
+					<div class="project-info">
+						<h3>POnG</h3>
+						<p>Pong game developed in Godot, inspired by Windows 7. Covers the basics of game development in Godot.</p>
+						<a href="https://github.com/stchigel/POnG" class="btn-ver" target="_blank" rel="noopener noreferrer">View project <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel" id="panel-watermazing">
+				<div class="project-content">
+					<img src="../img/juegos/watermazeing.webp" alt="WaterMazeIng" class="project-img centrado">
+					<div class="project-info">
+						<h3>WaterMazeIng</h3>
+						<p>Underwater maze game developed in Godot, with fluid water mechanics and an addictive level system.</p>
+						<a href="https://videojuegosipm2026.itch.io/water-maze-ing" class="btn-ver" target="_blank" rel="noopener noreferrer">View project <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel" id="panel-ko">
+				<div class="project-content">
+					<img src="../img/juegos/KO.png" alt="KO" class="project-img centrado">
+					<div class="project-info">
+						<h3>K.O. Kriminal Objective</h3>
+						<p>Digital forensics game developed in Godot, simulating files, windows, chats and emails that follow a story and lead the player to the correct conclusion.</p>
+						<a href="https://github.com/stchigel/KO-Kriminal-Objective" class="btn-ver" target="_blank" rel="noopener noreferrer">View project <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel" id="panel-estelar">
+				<div class="project-content">
+					<img src="../img/juegos/estelar.png" alt="Estelar" class="project-img centrado">
+					<div class="project-info">
+						<h3>Estelar</h3>
+						<p>Immersive Unity experience for an advertising agency; the game takes you through its various projects. Design by Amalia.</p>
+						<a href="" class="btn-ver">View project <i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel" id="panel-contacto">
+				<ul class="lista-contacto">
+					<li><a href="https://github.com/stchigel" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> Student GitHub</a></li>
+					<li><a href="https://github.com/geniosoy" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> Personal GitHub</a></li>
+					<li><a href="https://www.linkedin.com/in/stchigel" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> My LinkedIn</a></li>
+					<li><a href="mailto:nicolas@stchigel.com" target="_blank" rel="noopener noreferrer"><i class="bi bi-envelope"></i> My email</a></li>
+					<li><a href="../img/CV-Nicolas-Stchigel.pdf" target="_blank"><i class="bi bi-file-earmark-person"></i> My CV</a></li>
+				</ul>
+			</div>
+
+		</main>
+	</div>
+
+	<script>
+		// Supplies the English word list before main.js runs the typing effect
+		window.TYPING_WORDS = ["Stchigel", "Programmer", "Developer", "Technician", "Administrator"];
+	</script>
+	<script src="../js/main.js"></script>
+</body>
+</html>
