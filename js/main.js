@@ -42,7 +42,9 @@ function deletingEffect() {
     loopDeleting();
 };
 
-typingEffect();
+// First word starts fully typed, then waits before being deleted and cycling normally
+document.getElementById('word').innerHTML = words[i];
+setTimeout(deletingEffect, 1000);
 
 // -- Scroll-driven roller ------------------------------------------
 
