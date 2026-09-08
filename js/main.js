@@ -5,11 +5,11 @@
 
 // window.TYPING_WORDS lets translated pages (e.g. en/index.html) supply their own word list
 const words = window.TYPING_WORDS || ["Stchigel", "Programador", "Desarrollador", "Tecnico", "Administrador"];
-let i = 0;
+let wordIndex = 0;
 let timer;
 
 function typingEffect() {
-    let word = words[i].split("");
+    let word = words[wordIndex].split("");
     var loopTyping = function() {
         if (word.length > 0) {
             document.getElementById('word').innerHTML += word.shift();
@@ -23,16 +23,16 @@ function typingEffect() {
 };
 
 function deletingEffect() {
-    let word = words[i].split("");
+    let word = words[wordIndex].split("");
     var loopDeleting = function() {
         if (word.length > 0) {
             word.pop();
             document.getElementById('word').innerHTML = word.join("");
         } else {
-            if (words.length > (i + 1)) {
-                i++;
+            if (words.length > (wordIndex + 1)) {
+                wordIndex++;
             } else {
-                i = 0;
+                wordIndex = 0;
             };
             typingEffect();
             return false;
@@ -43,7 +43,7 @@ function deletingEffect() {
 };
 
 // First word starts fully typed, then waits before being deleted and cycling normally
-document.getElementById('word').innerHTML = words[i];
+document.getElementById('word').innerHTML = words[wordIndex];
 setTimeout(deletingEffect, 1000);
 
 // -- Scroll-driven roller ------------------------------------------
